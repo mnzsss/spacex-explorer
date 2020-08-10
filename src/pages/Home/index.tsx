@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import { Header } from '../../components';
+import { Header, Footer } from '../../components';
 
 import rocket from '../../assets/spacex_dragon.png';
 
@@ -44,6 +44,8 @@ const Home: React.FC = () => {
 
         <img src={rocket} alt="SpaceX Dragon" />
       </Content>
+
+      <Footer />
     </Container>
   );
 };

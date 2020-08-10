@@ -1,6 +1,8 @@
 import styled from 'styled-components';
 
-export const Container = styled.div``;
+export const Container = styled.div`
+  overflow: hidden;
+`;
 
 export const Content = styled.div`
   display: flex;
@@ -25,8 +27,8 @@ export const Content = styled.div`
   }
 
   img {
-    max-width: 60vw;
-    height: auto;
+    width: auto;
+    height: 76vh;
   }
 `;
 

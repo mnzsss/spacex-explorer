@@ -13,7 +13,8 @@ export default createGlobalStyle`
   background: radial-gradient(56.04% 44.43% at 50% 100%, #161616 0%, #000000 100%);
   color: #fff;
   -webkit-font-smoothing: antialiased;
-  height: 100vh;
+  height: 100%;
+  min-height: 100vh;
  }
 
  body, input, button, table {
@@ -21,13 +22,13 @@ export default createGlobalStyle`
   font-family: din-2014, sans-serif;
   font-weight: 400;
   font-style: normal;
-  overflow: hidden;
  }
 
  #app {
   margin: 0 auto;
   padding: 0 30px;
-  max-width: 90%;
+  max-width: 80%;
+  height: 100%;
  }
 
  button {

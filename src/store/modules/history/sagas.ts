@@ -5,8 +5,6 @@ import api from '../../../services/api';
 
 export function* getHistories() {
   try {
-    yield put(actions.getHistoriesRequest());
-
     const { data } = yield call(() => api.get('history?order=desc'));
 
     yield put(actions.getHistoriesSuccess({ histories: data }));
