@@ -10,7 +10,7 @@ export type StoreAction = HistoryAction;
 export default (
   reducers: Reducer<StoreState, StoreAction>,
   middlewares: Middleware[],
-): any => {
+) => {
   const enhancer = applyMiddleware(...middlewares);
 
   return createStore(reducers, enhancer);

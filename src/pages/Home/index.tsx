@@ -1,9 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import rocket from '../../assets/spacex_dragon.png';
-
 import { Header } from '../../components';
+
+import rocket from '../../assets/spacex_dragon.png';
 
 import { Container, Content, SectionsNavigator } from './styles';
 

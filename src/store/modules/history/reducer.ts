@@ -1,4 +1,3 @@
-import { Reducer } from 'redux';
 import { HistoryState, HistoryAction } from './types';
 
 const initialState: HistoryState = {
@@ -7,7 +6,7 @@ const initialState: HistoryState = {
   error: false,
 };
 
-const historyReducer: Reducer<HistoryState> = (
+const historyReducer = (
   state = initialState,
   action: HistoryAction,
 ): HistoryState => {

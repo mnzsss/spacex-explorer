@@ -10,7 +10,7 @@ export default createGlobalStyle`
  }
 
  body {
-  background: radial-gradient(61.67% 177.77% at 101% 48.34%, #161616 0%, #000000 100%);
+  background: radial-gradient(56.04% 44.43% at 50% 100%, #161616 0%, #000000 100%);
   color: #fff;
   -webkit-font-smoothing: antialiased;
   height: 100vh;
