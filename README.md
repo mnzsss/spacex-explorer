@@ -6,6 +6,10 @@
   </a>
 </p>
 
+<p align="center">
+  <img src="./github/preview.png" />
+</p>
+
 This repository is created to manage source code of the test task given by volungo for creating a React JS application with integration of SpaceX APIs.
 
 ## Layout
