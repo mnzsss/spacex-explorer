@@ -14,7 +14,7 @@ import { getLaunchesRequest } from '../../store/modules/launch/actions';
 import { Launch } from '../../store/modules/launch/types';
 import { StoreState } from '../../store/createStore';
 
-import { Header, Footer, BackButton } from '../../components';
+import { Header, Footer, BackButton, Modal } from '../../components';
 
 import {
   Container,
@@ -26,6 +26,14 @@ import {
   PaginationButtons,
 } from './styles';
 
+interface Links {
+  mission_patch: string;
+  article_link: string;
+  wikipedia: string;
+  youtube_id: string;
+  flickr_images: string[];
+}
+
 const Launches: React.FC = () => {
   const dispacth = useDispatch();
 
@@ -34,6 +42,8 @@ const Launches: React.FC = () => {
   );
 
   const [selectedDate, setSelectedDate] = useState<Date>(new Date());
+  const [selectedLaunch, setSelectedLaunch] = useState<Links>({} as Links);
+  const [openModal, setOpenModal] = useState(false);
 
   const [pageLimit] = useState(16);
   const [total] = useState(launches.length);
@@ -77,8 +87,17 @@ const Launches: React.FC = () => {
     setPage(page + 1);
   }, [page, totalPages]);
 
+  const handleOpenModal = useCallback(links => {
+    setSelectedLaunch(links);
+    setOpenModal(true);
+  }, []);
+
   return (
     <>
+      {openModal && (
+        <Modal launch={selectedLaunch} onClose={() => setOpenModal(false)} />
+      )}
+
       <Header>Launches</Header>
 
       <Container>
@@ -112,7 +131,10 @@ const Launches: React.FC = () => {
           ) : (
             <>
               {launchesPage.map(launch => (
-                <LaunchItem key={launch.flight_number}>
+                <LaunchItem
+                  key={launch.flight_number}
+                  onClick={() => handleOpenModal(launch.links)}
+                >
                   <h3>{launch.mission_name}</h3>
 
                   <div className="payload">

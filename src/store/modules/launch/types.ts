@@ -8,6 +8,7 @@ export interface Launch {
   mission_name: string;
   launch_date_utc: string;
   rocket: {
+    rocket_id: string;
     second_stage: {
       payloads: [
         {
@@ -17,6 +18,13 @@ export interface Launch {
         },
       ];
     };
+  };
+  links: {
+    mission_patch: string;
+    article_link: string;
+    wikipedia: string;
+    youtube_id: string;
+    flickr_images: string[];
   };
 }
 

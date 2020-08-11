@@ -17,6 +17,7 @@ export default createGlobalStyle`
   -webkit-font-smoothing: antialiased;
   height: 100%;
   min-height: 100vh;
+  overflow-x: hidden;
  }
 
  body, input, button, table {
