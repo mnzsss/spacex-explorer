@@ -1,18 +1,15 @@
 import React, { useEffect, useMemo } from 'react';
-import { useHistory } from 'react-router-dom';
-import { FaChevronLeft } from 'react-icons/fa';
 import { useSelector, useDispatch } from 'react-redux';
 import { format } from 'date-fns';
 
 import { StoreState } from '../../store/createStore';
 import { getHistoriesRequest } from '../../store/modules/history/actions';
 
-import { Header, Footer } from '../../components';
+import { Header, Footer, BackButton } from '../../components';
 
-import { Container, GoBackButton, List, ListItem } from './styles';
+import { Container, List, ListItem } from './styles';
 
 const Histories: React.FC = () => {
-  const { goBack } = useHistory();
   const dispacth = useDispatch();
 
   const { histories } = useSelector((state: StoreState) => state.history);
@@ -40,10 +37,7 @@ const Histories: React.FC = () => {
       <Header>Histories</Header>
 
       <Container>
-        <GoBackButton onClick={() => goBack()}>
-          <FaChevronLeft />
-          <span>Go Back</span>
-        </GoBackButton>
+        <BackButton />
 
         <List>
           {parsedHistories.map(history => (

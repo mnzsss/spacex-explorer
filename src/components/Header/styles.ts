@@ -1,10 +1,10 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-  margin-top: 60px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding-top: 50px;
 `;
 
 export const Title = styled.h3`
