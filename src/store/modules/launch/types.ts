@@ -7,6 +7,7 @@ export interface Launch {
   flight_number: number;
   mission_name: string;
   launch_date_utc: string;
+  launch_date_local: string;
   rocket: {
     rocket_id: string;
     second_stage: {
@@ -15,6 +16,7 @@ export interface Launch {
           nationality: string;
           manufacturer: string;
           payload_type: string;
+          payload_mass_lbs: string;
         },
       ];
     };

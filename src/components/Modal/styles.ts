@@ -115,12 +115,12 @@ export const Container = styled.div`
 
   .fotos {
     display: grid;
-    grid-template-columns: repeat(4, auto);
+    grid-template-columns: repeat(4, 1fr);
     gap: 16px;
     margin-top: 40px;
 
     img {
-      max-width: 100%;
+      width: 100%;
       height: 150px;
       object-fit: cover;
     }

@@ -1,4 +1,4 @@
-import React, { useCallback } from 'react';
+import React, { useCallback, useMemo } from 'react';
 import { AiOutlineCloseSquare } from 'react-icons/ai';
 
 import { Wrapper, Container } from './styles';
@@ -16,6 +16,10 @@ interface Props {
 
 const Modal: React.FC<Props> = ({ launch, onClose }) => {
   const handleCloseModal = useCallback(() => onClose(false), [onClose]);
+
+  const launchPhotos = useMemo(() => launch.flickr_images.slice(0, 4), [
+    launch.flickr_images,
+  ]);
 
   return (
     <Wrapper>
@@ -76,7 +80,7 @@ const Modal: React.FC<Props> = ({ launch, onClose }) => {
             </div>
 
             <div className="fotos">
-              {launch.flickr_images.map(url => (
+              {launchPhotos.map(url => (
                 <img key={url} src={url} alt={url} />
               ))}
             </div>

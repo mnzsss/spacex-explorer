@@ -19,7 +19,6 @@ export const Filter = styled.div`
     align-items: center;
     border-bottom: 1px solid rgba(255, 255, 255, 0.3);
     padding-bottom: 15px;
-    margin-bottom: 15px;
 
     svg {
       margin-right: 15px;
@@ -45,6 +44,23 @@ export const Filter = styled.div`
 
   select {
     min-width: 200px;
+  }
+
+  > button {
+    height: 100%;
+    color: #000;
+    background: #fff;
+    border: 2px solid #fff;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: 10px 20px;
+    margin-left: 15px;
+    transition: all 0.2s;
+
+    &:hover {
+      background: transparent;
+      color: #fff;
+    }
   }
 `;
 
